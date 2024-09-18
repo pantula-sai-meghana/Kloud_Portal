@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+ <!-- Sets the viewport properties for responsive design -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+<link href="https://db.onlinewebfonts.com/c/ab0e848e0e83a85a5af69f5acf1ebe73?family=Cursed+Timer+ULiL" rel="stylesheet">
+<title>Basketball Scores</title>
+<style>
+    /* <!-- Defines a CSS class called "container" --> */
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /*margin-top: 50px;*/
+    }
+
+    .big-box {
+        
+        width: 250px;
+        height: 250px;
+        background-color: rgb(21, 9, 77);
+        display: flex;
+        /* margin-bottom: 70px; */
+        margin-top:90px;
+        padding: 10px;
+         flex-direction: row;
+        align-items: center; 
+        justify-content: center;
+    }
+
+    .small-box {
+        width: 80px;
+        height: 80px;
+        background-color: rgb(3, 1, 12);
+        display: inline-block;
+        margin: 20px;
+        margin-left: -60px;
+          margin-top: 30px;
+        
+        
+
+    }
+
+    .number {
+        font-size: 52px;
+        text-align: center;
+        line-height: 80px; 
+        font-family: "Cursed Timer ULiL"; 
+        color: brown;
+        
+    }
+    .button-group {
+        margin-top: 20px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        
+     
+    }
+
+    button {
+        /* margin: 10 50px; */
+        padding:2px;
+        margin: 3px;
+        font-family: "Cursed Timer ULiL";
+        color:rgb(158, 158, 158);
+        background-color: rgb(21,9,77);
+        border-color: rgb(196, 190, 190);
+        
+    }
+    
+    .text-above {
+        font-size: 20px;
+        display: flex;
+        color:aliceblue;
+        margin-bottom:115px;
+        margin-left:7px;
+       
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    
+    <div class="big-box">
+        <!-- Displays "HOME" above home team's score -->
+        <div class="text-above"><b>HOME</b></div>
+        <div class="small-box">
+          
+            <div class="number" id="number1">0</div>
+            <div class="button-group">
+                <button onclick="changeNumber(1, 1)">+1</button>
+                <button onclick="changeNumber(1, 2)">+2</button>
+                <button onclick="changeNumber(1, 3)">+3</button> 
+            </div>
+        </div>
+        <div class="text-above"><b>GUEST</b></div>
+        <div class="small-box">
+          
+            <div class="number" id="number2">0</div>
+            <div class="button-group">
+                <button onclick="changeNumber(2, 1)">+1</button>
+                <button onclick="changeNumber(2, 2)">+2</button>
+                <button onclick="changeNumber(2, 3)">+3</button> 
+            </div>
+        </div>
+        
+    </div>
+</div>
+        
+    
+
+
+<script>
+function changeNumber(boxNumber, increment) {
+    var numberElement = document.getElementById("number" + boxNumber);
+    var currentNumber = parseInt(numberElement.innerText);
+    numberElement.innerText = currentNumber + increment;
+}
+</script>
+
+</body>
+</html>
